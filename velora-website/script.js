@@ -115,4 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 6. Bio Toggle Logic
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const fullBio = btn.previousElementSibling;
+            if (fullBio && fullBio.classList.contains('bio-full')) {
+                const isOpen = fullBio.classList.toggle('active');
+                btn.innerText = isOpen ? 'Read Less' : 'Read More';
+            }
+        });
+    });
 });

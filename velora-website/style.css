@@ -383,13 +383,31 @@ footer {
 }
 
 
-/* --- Floating WhatsApp --- */
+/* --- Bio Toggle --- */
+.bio-full {
+    display: none;
+    }
+.bio-full.active {
+    display: block;
+    }
+.read-more-btn {
+    cursor: pointer;
+    color: var(--primary-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: inline-block;
+    transition: var(--transition);
+}
+.read-more-btn:hover {
+    text-decoration: underline;
+}
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
+    bottom: 20px;
+    right: 20px;
     background-color: #25d366;
     color: #fff !important;
     border-radius: 50px;
@@ -550,7 +568,7 @@ footer {
     }
 
     .nav-links li {
-        margin-bottom: 12px;
+        margin-bottom: 6px;
         text-align: left;
         width: 100%;
     }
@@ -559,7 +577,7 @@ footer {
         font-size: 1.2rem;
         color: var(--charcoal);
         display: block;
-        padding: 5px 0;
+        padding: 3px 0;
         transition: var(--transition);
         border-bottom: 1px solid transparent;
     }
