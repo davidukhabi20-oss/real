@@ -118,7 +118,7 @@ nav.scrolled {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     list-style: none;
 }
 
@@ -238,6 +238,12 @@ nav.scrolled {
 }
 
 /* --- Premium Cards --- */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
