@@ -77,16 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(c => counterObserver.observe(c));
 
-    // 4. Form Handling simulation
+    // 4. Form Handling
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('.btn-submit');
+            if (!btn) return;
+
             const originalText = btn.innerText;
+
+            // General contact form simulation
             btn.innerText = 'Sending...';
             btn.disabled = true;
-
             setTimeout(() => {
                 alert('Thank you for your inquiry. A Velora representative will contact you shortly.');
                 btn.innerText = originalText;
