@@ -314,6 +314,19 @@ nav.scrolled {
     transform: translateY(-2px);
 }
 
+/* Hide navigation bar on small screens (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+/* Show navigation bar on larger screens (laptops/desktops) */
+@media (min-width: 769px) {
+  .navbar {
+    display: block;
+  }
+}
 
 /* --- Hero Section --- */
 .hero {
