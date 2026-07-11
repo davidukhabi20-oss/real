@@ -231,23 +231,7 @@ section {
 
 
 /* --- Navigation --- */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 20px 0;
-  backdrop-filter: blur(10px); /* glass effect always visible */
-  background: rgba(255, 255, 255, 0.3); /* light transparent background */
-  transition: var(--transition);
-}
 
-/* Hide navbar on screens smaller than 768px (typical mobile breakpoint) */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-}
 
 /* Optional: stronger background when scrolled */
 nav.scrolled {
