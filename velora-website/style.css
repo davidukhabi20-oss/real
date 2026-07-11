@@ -1,14 +1,17 @@
 :root {
     --primary-green: #D62828;
-    --tomato-red: #D62828;
+    --accent-red: #D62828;
+    --deep-forest: #D62828;
+    --soft-sage: #E8F0E8;
     --warm-cream: #FFF8F0;
     --white: #FFFFFF;
     --charcoal: #1E1E1E;
     --light-gray: #F5F7F5;
-    --glass: rgba(255, 255, 255, 0.8);
+    --glass: rgba(255, 255, 255, 0.7);
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.08);
+    --shadow-deep: 0 20px 40px rgba(0, 0, 0, 0.12);
     --radius: 16px;
 }
 
@@ -30,6 +33,109 @@ h1, h2, h3, .editorial {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* --- Design System Foundations --- */
+.display-1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.display-2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.text-lead {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.9;
+}
+
+.text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+}
+
+/* Spacing Utilities */
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mt-4 { margin-top: 40px; }
+.mt-5 { margin-top: 50px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.mb-4 { margin-bottom: 40px; }
+.mb-lg { margin-bottom: 60px; }
+
+/* Glassmorphism */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- Hero Variants --- */
+.hero-full {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero-mini {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-split {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0;
+}
+
+/* Hero Backgrounds */
+.bg-hero-home {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/pexels-erkan-budak-2087429-7745029.jpg') center/cover;
+}
+
+.bg-hero-cta {
+    background: linear-gradient(rgba(214, 40, 40, 0.8), rgba(214, 40, 40, 0.9)), url('https://images.unsplash.com/photo-1500382008672-b1e573a97116?auto=format&fit=crop&q=80&w=2000') center/cover;
+}
+
+/* Image Treatments */
+.img-editorial {
+    max-height: 450px;
+    max-width: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-medium);
 }
 
 /* --- Layout Components --- */
@@ -63,14 +169,74 @@ section {
     margin-bottom: 10px;
 }
 
+/* Social Section */
+
+.containerll {
+    max-width: 1300px;
+    margin: 0 150px;
+    padding: 0 40px;
+}
+
+.social-section {
+  max-width: 1300px;
+    margin: 20px  30px 40px;
+    padding: 0 40px;
+}
+
+/* Heading */
+.social-section h4 {
+ max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Icon container */
+.social-section .icons {
+   max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+  
+}
+
+/* Individual icons */
+.social-section .icons a {
+  color: #1a1a1a;
+  font-size: 28px;
+  margin: 0 15px;        /* spacing between icons */
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.social-section .icons a:hover {
+  color: #006400;        /* brand accent */
+}
+
+
+.section-title .subtitle {
+    color: var(--primary-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+
 /* --- Navigation --- */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px 0;
-    transition: var(--transition);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  backdrop-filter: blur(10px); /* glass effect always visible */
+  background: rgba(255, 255, 255, 0.3); /* light transparent background */
+  transition: var(--transition);
+}
+
+/* Optional: stronger background when scrolled */
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .logo img {
@@ -296,6 +462,15 @@ nav.scrolled {
     box-shadow: var(--shadow-lg);
 }
 
+.spliti-image img {
+    width: 70%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    
+}
+
 /* --- Process Timeline --- */
 .timeline {
     display: flex;
@@ -429,7 +604,7 @@ footer {
 }
 
 .whatsapp-float:hover {
-    background-color: #128c7e;
+    background-color: #25d366;
     transform: scale(1.1);
 }
 .form-container {
