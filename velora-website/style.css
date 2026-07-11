@@ -231,7 +231,23 @@ section {
 
 
 /* --- Navigation --- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  backdrop-filter: blur(10px); /* glass effect always visible */
+  background: rgba(255, 255, 255, 0.3); /* light transparent background */
+  transition: var(--transition);
+}
 
+/* Hide navbar on screens smaller than 768px (typical mobile breakpoint) */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
 
 /* Optional: stronger background when scrolled */
 nav.scrolled {
@@ -244,6 +260,37 @@ nav.scrolled {
     display: block;
     z-index: 1100;
 }
+
+/* Base navbar */
+nav {
+  position: fixed;        /* stays visible while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px); /* glass effect */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  z-index: 1000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  nav {
+    display: block;       /* keep it visible */
+    height: 60px;         /* smaller height for mobile */
+    padding: 0 15px;      /* tighter padding */
+  }
+
+  nav ul {
+    display: none;        /* hide full nav links if you want */
+  }
+
+  nav .mobile-toggle {
+    display: block;       /* show a hamburger menu button */
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
 
 .menu-toggle {
     display: none;
