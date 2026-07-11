@@ -234,6 +234,13 @@ nav {
   transition: var(--transition);
 }
 
+/* Hide navbar on screens smaller than 768px (typical mobile breakpoint) */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
 /* Optional: stronger background when scrolled */
 nav.scrolled {
   background: rgba(255, 255, 255, 0.9);
@@ -312,20 +319,6 @@ nav.scrolled {
 .btn-partner:hover {
     background: var(--charcoal);
     transform: translateY(-2px);
-}
-
-/* Hide navigation bar on small screens (mobile) */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
-}
-
-/* Show navigation bar on larger screens (laptops/desktops) */
-@media (min-width: 769px) {
-  .navbar {
-    display: block;
-  }
 }
 
 /* --- Hero Section --- */
