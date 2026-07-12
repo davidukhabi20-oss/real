@@ -168,6 +168,37 @@ section {
     margin-bottom: 20px;
 }
 
+.contact-section {
+  padding: 40px 0; /* adds space above and below the section */
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-links {
+  margin-top: 20px; /* space between address and social icons */
+}
+
+.social-links h4 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.social-links .icons a {
+  color: #1a1a1a;
+  font-size: 28px;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-links .icons a:hover {
+  color: #006400; /* your brand green */
+}
+
+
 .section-title .subtitle {
     color: var(--primary-green);
     text-transform: uppercase;
