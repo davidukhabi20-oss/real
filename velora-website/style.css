@@ -168,35 +168,6 @@ section {
     margin-bottom: 20px;
 }
 
-.contact-section {
-  padding: 40px 0; /* adds space above and below the section */
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.social-links {
-  margin-top: 20px; /* space between address and social icons */
-}
-
-.social-links h4 {
-  color: #1a1a1a;
-  margin-bottom: 10px;
-}
-
-.social-links .icons a {
-  color: #1a1a1a;
-  font-size: 28px;
-  margin-right: 10px;
-  transition: color 0.3s ease;
-}
-
-.social-links .icons a:hover {
-  color: #006400; /* your brand green */
-}
 
 
 .section-title .subtitle {
@@ -208,47 +179,8 @@ section {
     margin-bottom: 10px;
 }
 
-/* Social Section */
 
-.containerll {
-    max-width: 1300px;
-    margin: 0 150px;
-    padding: 0 40px;
-}
 
-.social-section {
-  max-width: 1300px;
-    margin: 20px  30px 40px;
-    padding: 0 40px;
-}
-
-/* Heading */
-.social-section h4 {
- max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-/* Icon container */
-.social-section .icons {
-   max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 40px;
-  
-}
-
-/* Individual icons */
-.social-section .icons a {
-  color: #1a1a1a;
-  font-size: 28px;
-  margin: 0 15px;        /* spacing between icons */
-  transition: color 0.3s ease;
-}
-
-/* Hover effect */
-.social-section .icons a:hover {
-  color: #006400;        /* brand accent */
-}
 
 
 .section-title .subtitle {
