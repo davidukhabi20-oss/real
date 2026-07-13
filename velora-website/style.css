@@ -226,16 +226,18 @@ nav.scrolled {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   nav {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-20px);
-    height: 60px;
-    padding: 0 15px;
-  }
-  nav.scrolled {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+    height: 60px;
+    padding: 0 15px;
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+  nav.scrolled {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
   }
 }
 
