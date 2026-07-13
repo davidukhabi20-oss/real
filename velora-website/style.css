@@ -197,24 +197,23 @@ section {
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
   padding: 20px 0;
-  backdrop-filter: blur(10px); /* glass effect always visible */
-  background: rgba(255, 255, 255, 0.3); /* light transparent background */
   transition: var(--transition);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  background-color: transparent;
+  backdrop-filter: none;
 }
 
-/* Hide navbar on screens smaller than 768px (typical mobile breakpoint) */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-}
-
-/* Optional: stronger background when scrolled */
 nav.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  box-shadow: var(--shadow-soft);
 }
 
 .logo img {
@@ -224,36 +223,21 @@ nav.scrolled {
     z-index: 1100;
 }
 
-/* Base navbar */
-nav {
-  position: fixed;        /* stays visible while scrolling */
-  top: 0;
-  left: 0;
-  width: 100%;
-  backdrop-filter: blur(10px); /* glass effect */
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
-  z-index: 1000;
-}
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
   nav {
-    display: block;       /* keep it visible */
-    height: 60px;         /* smaller height for mobile */
-    padding: 0 15px;      /* tighter padding */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    height: 60px;
+    padding: 0 15px;
   }
-
-  nav ul {
-    display: none;        /* hide full nav links if you want */
-  }
-
-  nav .mobile-toggle {
-    display: block;       /* show a hamburger menu button */
-    font-size: 24px;
-    cursor: pointer;
+  nav.scrolled {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
-
 
 .menu-toggle {
     display: none;
@@ -265,13 +249,6 @@ nav {
 
 nav.scrolled .menu-toggle {
     color: var(--charcoal);
-}
-
-nav.scrolled {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    padding: 10px 0;
-    box-shadow: var(--shadow-sm);
 }
 
 .nav-content {
@@ -299,10 +276,14 @@ nav.scrolled {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--charcoal);
+    color: var(--white);
     font-size: 0.95rem;
     font-weight: 500;
     transition: var(--transition);
+}
+
+nav.scrolled .nav-links a {
+    color: var(--charcoal);
 }
 
 .nav-links a:hover {
