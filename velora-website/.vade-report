@@ -1,0 +1,66 @@
+# Vercel Speed Insights Implementation Report
+
+## Summary
+Successfully installed and configured Vercel Speed Insights for the Velora Agroprocessing Ltd. static HTML website.
+
+## Changes Made
+
+### 1. Package Installation
+- **Created**: `package.json` - Project manifest with `@vercel/speed-insights` dependency (v1.3.1)
+- **Created**: `package-lock.json` - Lockfile for consistent dependency resolution
+- Installed `@vercel/speed-insights` package using npm
+
+### 2. Speed Insights Integration
+- **Created**: `speed-insights.js` - Initialization script that:
+  - Sets up the Speed Insights queue (window.si and window.siq)
+  - Dynamically loads the Speed Insights script from Vercel's CDN (`/_vercel/speed-insights/script.js`)
+  - Uses deferred loading to avoid blocking page rendering
+
+### 3. HTML Updates
+Modified all 11 HTML pages to include the Speed Insights script:
+- `index.html`
+- `about.html`
+- `products.html`
+- `shop.html`
+- `careers.html`
+- `contact.html`
+- `distribution.html`
+- `impact.html`
+- `investors.html`
+- `news.html`
+- `reviews.html`
+
+Each file now includes `<script src="speed-insights.js"></script>` in the `<head>` section.
+
+### 4. Git Configuration
+- **Created**: `.gitignore` - Ensures node_modules and other build artifacts are not committed
+
+## Implementation Approach
+
+Following the official Vercel Speed Insights documentation (fetched from https://vercel.com/docs/speed-insights/quickstart), I implemented the static HTML/vanilla JavaScript approach:
+
+1. The script initializes the Speed Insights queue using the recommended pattern
+2. It dynamically loads the tracking script from Vercel's CDN path
+3. The script is included in all HTML pages for comprehensive tracking
+
+## How It Works
+
+When the website is deployed to Vercel:
+- The Speed Insights script will automatically load from `/_vercel/speed-insights/script.js`
+- It will track Web Vitals metrics (LCP, FID, CLS, TTFB, INP)
+- Metrics will be sent to Vercel's Speed Insights dashboard
+- Data collection only occurs in production (not in development mode)
+
+## Next Steps
+
+After deployment to Vercel:
+1. Ensure Speed Insights is enabled in the Vercel project dashboard
+2. After a few days of traffic, metrics will be visible in the Speed Insights dashboard
+3. Monitor Core Web Vitals to identify performance improvement opportunities
+
+## Notes
+
+- Speed Insights will only function when deployed to Vercel (not in local development)
+- The implementation follows the official vanilla JavaScript pattern for static sites
+- All HTML files maintain their original structure with only the script tag addition
+- The package.json allows for future npm-based tooling if needed
