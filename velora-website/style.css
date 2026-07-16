@@ -642,6 +642,15 @@ footer {
     background: var(--charcoal);
 }
 
+.newsletter-success {
+    color: var(--primary-green);
+    font-size: 0.85rem;
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
 /* --- FAQ Section --- */
 .faq-section {
     padding: 100px 0;

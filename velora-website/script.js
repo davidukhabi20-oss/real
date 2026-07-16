@@ -86,16 +86,47 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!btn) return;
 
             const originalText = btn.innerText;
-
-            // General contact form simulation
             btn.innerText = 'Sending...';
             btn.disabled = true;
-            setTimeout(() => {
+
+            if (form.classList.contains('newsletter-form')) {
+                // Newsletter handling via Formspree
+                const formData = new FormData(form);
+
+                try {
+                    // IMPORTANT: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID
+                    const response = await fetch('https://formspree.io/f/xkollrzr', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        const successMsg = document.createElement('div');
+                        successMsg.className = 'newsletter-success';
+                        successMsg.innerText = 'Thank you for subscribing to our newsletter!';
+                        form.appendChild(successMsg);
+
+                        setTimeout(() => {
+                            successMsg.remove();
+                        }, 5000);
+                    } else {
+                        alert('Something went wrong. Please try again later.');
+                    }
+                } catch (error) {
+                    alert('An error occurred. Please check your connection.');
+                }
+            } else {
+                // General contact form simulation
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 alert('Thank you for your inquiry. A Velora representative will contact you shortly.');
-                btn.innerText = originalText;
-                btn.disabled = false;
-                form.reset();
-            }, 2000);
+            }
+
+            btn.innerText = originalText;
+            btn.disabled = false;
+            form.reset();
         });
     });
 
