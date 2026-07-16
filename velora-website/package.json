@@ -1,0 +1,13 @@
+{
+  "name": "velora-website",
+  "version": "1.0.0",
+  "description": "Velora Agroprocessing Ltd. Website",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  },
+  "devDependencies": {}
+}
